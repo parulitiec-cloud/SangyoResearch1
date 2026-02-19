@@ -4,105 +4,262 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sangyo Research</title>
+
+<!-- Premium Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        color: #333;
-    }
-    header {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-<header>
-    <img src="logo.png" alt="Sangyo Research Logo" style="height:60px;">
-    <nav>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
+body {
+    font-family: 'Inter', sans-serif;
+    color: #1a1a1a;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
 
-        background: #0A2540;
-        color: white;
-        padding: 20px 0;
-        text-align: center;
+/* ================= HEADER ================= */
+
+header {
+    position: sticky;
+    top: 0;
+    background: white;
+    padding: 18px 10%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 18px;
+    color: #0A2540;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 12px;
+}
+
+/* Navigation */
+nav a {
+    text-decoration: none;
+    margin-left: 35px;
+    font-weight: 500;
+    color: #333;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: #0A2540;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: #0A2540;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    background: #0A2540;
+    color: white;
+    text-align: center;
+    padding: 120px 10%;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: auto;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.hero button {
+    padding: 14px 30px;
+    background: white;
+    color: #0A2540;
+    border: none;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    background: #e6e6e6;
+}
+
+/* ================= SECTIONS ================= */
+
+section {
+    padding: 90px 10%;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 50px;
+    color: #0A2540;
+}
+
+/* Services */
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    padding: 30px;
+    border-radius: 15px;
+    background: #f9f9f9;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Process */
+
+.process-list {
+    max-width: 700px;
+    margin: auto;
+    font-size: 18px;
+}
+
+.process-list li {
+    margin-bottom: 15px;
+}
+
+/* Contact */
+
+form {
+    max-width: 600px;
+    margin: auto;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+form button {
+    width: 100%;
+    padding: 14px;
+    background: #0A2540;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #081c30;
+}
+
+/* Footer */
+
+footer {
+    background: #0A2540;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    margin-top: 60px;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
     }
+
     nav {
-        background: #133B5C;
-        padding: 10px;
-        text-align: center;
+        margin-top: 15px;
     }
+
     nav a {
-        color: white;
-        text-decoration: none;
-        margin: 0 15px;
-        font-weight: bold;
+        margin-left: 0;
+        margin-right: 20px;
     }
-    nav a:hover {
-        text-decoration: underline;
+
+    .hero h1 {
+        font-size: 32px;
     }
-    section {
-        padding: 40px 20px;
-        max-width: 1100px;
-        margin: auto;
-    }
-    .services {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-    }
-    .card {
-        background: #f4f4f4;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    footer {
-        background: #0A2540;
-        color: white;
-        text-align: center;
-        padding: 15px;
-    }
-    button {
-        background: #0A2540;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-    button:hover {
-        background: #133B5C;
-    }
-    form input, form textarea {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 10px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-    }
+}
 </style>
 </head>
+
 <body>
 
 <header>
-    <h1>Sangyo Research</h1>
-    <p>Turning Data Into Strategic Growth</p>
+    <div class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Sangyo Logo">
+            <span>Sangyo Research</span>
+        </div>
+
+        <nav>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#process">Process</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
 </header>
 
-<nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#process">Our Process</a>
-    <a href="#contact">Contact</a>
-</nav>
+<section class="hero">
+    <h1>Strategic Insights That Drive Growth</h1>
+    <p>We help organizations unlock smarter decisions through market intelligence, analytics, and research excellence.</p>
+    <button onclick="document.getElementById('contact').scrollIntoView()">Work With Us</button>
+</section>
 
 <section id="about">
     <h2>About Us</h2>
-    <p>
-        Sangyo is a full-service marketing research firm dedicated to helping businesses
-        understand their customers, markets, and competitors. We provide data-driven insights
-        that guide smart business decisions and fuel sustainable growth.
+    <p style="max-width:700px;margin:auto;text-align:center;">
+        Sangyo Research is a boutique consulting firm delivering data-driven strategy,
+        competitive intelligence, and advanced analytics to growth-focused organizations.
     </p>
 </section>
 
@@ -110,38 +267,33 @@
     <h2>Our Services</h2>
     <div class="services">
         <div class="card">
-            <h3>Market Analysis</h3>
-            <p>Comprehensive research to identify trends, opportunities, and competitive positioning.</p>
+            <h3>Market Intelligence</h3>
+            <p>Comprehensive industry research and competitive benchmarking.</p>
         </div>
         <div class="card">
-            <h3>Customer Insights</h3>
-            <p>Surveys, focus groups, and interviews to understand customer behavior and preferences.</p>
+            <h3>Customer Analytics</h3>
+            <p>Behavioral insights through surveys and advanced data modeling.</p>
         </div>
         <div class="card">
-            <h3>Brand Research</h3>
-            <p>Measure brand awareness, perception, and market impact.</p>
-        </div>
-        <div class="card">
-            <h3>Data Analytics</h3>
-            <p>Advanced analytics and reporting for actionable strategic decisions.</p>
+            <h3>Brand Strategy</h3>
+            <p>Measure brand positioning, awareness, and growth opportunities.</p>
         </div>
     </div>
 </section>
 
 <section id="process">
-    <h2>Our Research Process</h2>
-    <ol>
-        <li><strong>Define Objectives:</strong> Understand your business goals.</li>
-        <li><strong>Design Research:</strong> Select the right methodology.</li>
-        <li><strong>Collect Data:</strong> Use reliable tools and techniques.</li>
-        <li><strong>Analyze Insights:</strong> Transform data into clear recommendations.</li>
-        <li><strong>Deliver Results:</strong> Actionable reports and presentations.</li>
-    </ol>
+    <h2>Our Process</h2>
+    <ul class="process-list">
+        <li><strong>1.</strong> Define Objectives</li>
+        <li><strong>2.</strong> Design Methodology</li>
+        <li><strong>3.</strong> Collect & Analyze Data</li>
+        <li><strong>4.</strong> Deliver Strategic Recommendations</li>
+    </ul>
 </section>
 
 <section id="contact">
     <h2>Contact Us</h2>
-    <form>
+    <form onsubmit="alert('Message sent successfully!'); return false;">
         <input type="text" placeholder="Your Name" required>
         <input type="email" placeholder="Your Email" required>
         <textarea rows="5" placeholder="Your Message" required></textarea>
@@ -150,7 +302,7 @@
 </section>
 
 <footer>
-    <p>&copy; 2026 Sangyo Research | All Rights Reserved</p>
+    © 2026 Sangyo Research | All Rights Reserved
 </footer>
 
 </body>
